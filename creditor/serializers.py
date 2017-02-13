@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from borrower.models import Borrower
+from creditor.models import Creditor
 
 
-class BorrowerSerializer(serializers.HyperlinkedModelSerializer):
+class CreditorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Borrower
+        model = Creditor
         fields = ('__all__')

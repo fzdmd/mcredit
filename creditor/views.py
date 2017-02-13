@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from borrower.models import Borrower
+from creditor.models import Creditor
 from rest_framework import viewsets
-from borrower.serializers import *
+from creditor.serializers import *
 
-class BorrowerViewSet(viewsets.ModelViewSet):
+class CreditorViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Borrower.objects.all()
-    serializer_class = BorrowerSerializer
+    queryset = Creditor.objects.all()
+    serializer_class = CreditorSerializer

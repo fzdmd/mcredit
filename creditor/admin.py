@@ -1,6 +1,6 @@
 from django.contrib import admin
 from nested_inline.admin import NestedTabularInline, NestedStackedInline, NestedModelAdmin 
-from .models import Borrower, Offer, Requirements
+from .models import Creditor, Offer, Requirements
 from main.models import Contacts
 
 from django.forms import TextInput, ModelForm, Textarea, Select
@@ -41,15 +41,15 @@ class ContactsInline(NestedStackedInline):
             'fields': [('value','choice')]
         }),
     )
-class BorrowerForm(ModelForm):
+class CreditorForm(ModelForm):
     class Meta:
         widgets = {
             'name': CKEditorWidget(editor_options={'startupFocus': True})
         }
-class BorrowerAdmin(NestedModelAdmin):
+class CreditorAdmin(NestedModelAdmin):
     inlines = [OfferInline, ContactsInline]
 
 
-admin.site.register(Borrower, BorrowerAdmin)
+admin.site.register(Creditor, CreditorAdmin)
 admin.site.register(Contacts)
 admin.site.register(Requirements)

@@ -19,7 +19,7 @@ from rest_framework import routers
 from  creditor.views import *
 
 router = routers.DefaultRouter()
-router.register(r'creditor', BorrowerViewSet)
+router.register(r'creditor', CreditorViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

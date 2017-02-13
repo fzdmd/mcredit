@@ -23,7 +23,7 @@ CONTACTS_CHOICES = (
 class Contacts (models.Model):
     value = models.CharField(max_length=20)
     choice = models.CharField(choices=CONTACTS_CHOICES, default="mail", null=True, blank=True, max_length=100)
-    borrower = models.ForeignKey('borrower.Borrower', null=True)
+    creditor = models.ForeignKey('creditor.Creditor', null=True)
 
     def __str__(self):
         return self.name + ':' + self.contact_value

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class BorrowerConfig(AppConfig):
-    name = 'borrower'
+class CreditorConfig(AppConfig):
+    name = 'creditor'

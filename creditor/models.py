@@ -1,6 +1,6 @@
 from django.db import models
 
-class Borrower(models.Model):
+class Creditor(models.Model):
     name = models.CharField(max_length=500, blank=False)
     slug = models.SlugField(unique=True, null=True)
     verifed = models.BooleanField(default=False)
@@ -64,4 +64,4 @@ class Offer (models.Model):
     time_end = models.IntegerField(null=True, verbose_name="Максимальный возраст")
     loan_begin = models.IntegerField(null=True, verbose_name="Минимальная процентная ставка")
     loan_end = models.IntegerField(null=True, verbose_name="Максимальная процентная ставка")
-    borrower = models.ForeignKey(Borrower, null=True)
+    creditor = models.ForeignKey(Creditor, null=True)
